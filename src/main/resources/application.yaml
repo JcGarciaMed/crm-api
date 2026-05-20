@@ -15,13 +15,14 @@ spring:
     hikari:
       maximumPoolSize: 50
       maxLifeTime: 840000
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
   jpa:
     hibernate:
-      ddl-auto: none
-    open-in-view: false
+      ddl-auto: validate
     properties:
       hibernate:
-        ##dialect: org.hibernate.dialect.MySQL8Dialect
         jdbc:
           time_zone: UTC
   flyway:
